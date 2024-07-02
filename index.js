@@ -10,7 +10,16 @@ const questions = [
       type: 'input',
       name: 'logoText',
       message: 'Give logo characters(Up to 3): ',
-      
+      // Validation to make sure I get 1~3 characters
+      validate: function(input) {
+        const length = input.trim().length;
+        if (length === 0) {
+          return 'Please enter at least 1 character.';
+        } else if (length > 3) {
+          return 'Please enter no more than 3 characters.';
+        }
+        return true;
+      }
     },
     {
       type: 'input',
