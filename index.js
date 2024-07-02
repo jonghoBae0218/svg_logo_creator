@@ -73,6 +73,15 @@ const questions = [
         return returnFile;
       }
 
+      // Helper method to add text.
+  function addText(shape, text, color){
+    // y values are determined based on logo shape.
+    yVal = shape ==='Triangle' ? 135: shape==='Cicle' ? 125 :115;
+    return `<text x="150" y="${yVal}" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
+
+  }
+
+
 
    // Initiate function.
    init();
