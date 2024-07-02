@@ -29,3 +29,15 @@ const questions = [
         message: 'Give shape color',
     },
   ];
+
+  function init(){
+    inquirer
+    .prompt(questions)
+    .then((answers) =>{
+        writeToFile('logo.svg', answers);
+    })
+  }
+
+
+   // Initiate function.
+   init();
