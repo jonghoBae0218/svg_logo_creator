@@ -46,6 +46,33 @@ const questions = [
     );
   }
 
+    // Helper method to writing files.
+    function formatSVG(answers){
+        let returnFile =  `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> \n`;
+        let shapeObject;
+        switch(answers.shape){
+            case 'Triangle':
+                shapeObject = new Triangle();
+                break;
+    
+            case 'Circle':
+                shapeObject = new Circle();
+                break;
+    
+            case 'Square':
+                shapeObject = new Square();
+                break;
+        }
+        shapeObject.setColor(answers.shapeColor);
+        returnFile += shapeObject.render();
+    
+        returnFile += "\n" + addText(answers.shape, answers.logoText, answers.textColor);
+    
+    
+        returnFile += '\n</svg>';
+        return returnFile;
+      }
+
 
    // Initiate function.
    init();
